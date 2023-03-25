@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTACT | PLAYSTATION</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="nama">
+                <img src="../img/ps1.png" class="icon" width="35px" height="35px" />
+                <h1 class="nama-web">Anugrah PlayStation</h1>
+            </div>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="../home/home.html">Home</a></li>
+                    <li><a href="../store/store.html">Store</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                    <!-- <li><a href="../login/login.html">Login</a></li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <div class="bg-img"></div>
+
+        <div class="content">
+            <div class="card" style="margin-top: 8vh;" data-state="#about">
+                <div class="card-header">
+                    <div class="card-cover"
+                        style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')">
+                    </div>
+                    <img class="card-avatar" src="../img/icon_orang.png" alt="avatar" />
+                    <h1 class="card-fullname" id="inputnama"></h1>
+                    <h2 class="card-jobtitle" style="color: black;" id="inputemail"></h2>
+                </div>
+                <div class="card-main">
+                    <div class="card-section is-active" id="about">
+                        <div class="card-content">
+                            <div class="card-subtitle" id="inputnohp"></div>
+                            <div class="card-subtitle" id="inputjk"></div>
+                            <div class="card-subtitle" id="inputjps"></div>
+                            <p class="card-desc" id="inputpesan">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="../home/home.html" class="card-fullname">BACK</a>
+            </div>
+            <footer>
+                <p>&copy; Copyright 2023. Rizky Anugrah.</p>
+            </footer>
+        </div>
+</body>
+<script>
+    const form_data = JSON.parse(sessionStorage.getItem('form_data'));
+
+    for (let i = 0; i < form_data.length; i++) {
+        const nama = form_data[i].nama_lengkap;
+        const email = form_data[i].email;
+        const phone = form_data[i].phone;
+        const jenis_ps = form_data[i].jenis_ps;
+        const jenis_kelamin = form_data[i].jenis_kelamin;
+        const pesan = form_data[i].pesan;
+
+        inputnama.innerHTML = nama;
+        inputemail.innerHTML = email;
+        inputnohp.innerHTML = " Nomor HP : " + phone;
+        inputjk.innerHTML = " Jenis Kelamin : " + jenis_kelamin;
+        inputjps.innerHTML = " JENIS PS : " + jenis_ps;
+        inputpesan.innerHTML = " PESAN :  " + "<br>" + pesan;
+    }
+</script>
+
+</html>
