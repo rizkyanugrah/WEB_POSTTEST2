@@ -34,5 +34,3 @@ login.onclick = (e) => {
   document.getElementById("form").reset();
   document.getElementById("email").focus();
 };
-
-const alamat = form_data[i].alamat;
