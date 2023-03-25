@@ -13,23 +13,22 @@ function registerr(e) {
   if (nama === "" || email === "" || pass === "") {
     alert("Semua field harus diisi");
     return false;
-}
+  }
 
-if (email.match(mailformat)){
-   // mengambil data users yang sudah ada di local storage
+  if (email.match(mailformat)) {
+    // mengambil data users yang sudah ada di local storage
     var users = JSON.parse(localStorage.getItem("users")) || [];
 
     // menambahkan data users baru ke dalam array
-    users.push({nama: nama, email: email, password: pass});
+    users.push({ nama: nama, email: email, password: pass });
 
     // menyimpan data users ke dalam local storage
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Selamat Anda Telah Berhasil Daftar");
     window.location.href = "../login/login.html";
-} else {
-  alert("Masukkan email yang valid");
-  document.getElementById('email').focus();
-}
-   
+  } else {
+    alert("Masukkan email yang valid");
+    document.getElementById("email").focus();
+  }
 }
